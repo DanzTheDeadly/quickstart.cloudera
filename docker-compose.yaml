@@ -1,0 +1,26 @@
+version: "3.1"
+services:
+    postgres:
+        build: ./postgres
+        container_name: postgres
+        hostname: postgres
+        ports:
+            - "5432:5432"
+        networks:
+            - cloudera
+        stdin_open: true
+        tty: true
+    cloudera:
+        build: ./quickstart.cloudera
+        container_name: cloudera
+        hostname: quickstart.cloudera
+        privileged: true
+        ports:
+            - "8888:8888"
+            - "7180:7180"
+        networks:
+            - cloudera
+        stdin_open: true
+        tty: true
+networks:
+    cloudera:
