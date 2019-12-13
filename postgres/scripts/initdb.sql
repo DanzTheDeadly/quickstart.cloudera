@@ -1,7 +1,7 @@
 CREATE SCHEMA data;
 
-CREATE TABLE data.t (
-    video_id TEXT PRIMARY KEY,
+CREATE TABLE data.youtube (
+    video_id TEXT,
     trending_date TEXT,
     title TEXT,
     channel_title TEXT,
